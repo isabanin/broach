@@ -63,8 +63,8 @@ module Broach
         Broach::AuthenticationError.new("Couldn't authenticate with the supplied credentials for the account `#{account}'")
       elsif response.forbidden?
         Broach::AuthorizationError.new("Couldn't #{method.to_s.upcase} the resource `#{path}' on the account `#{account}'")
-      elsif response.found?
-        Broach::RedirectionError.new(response.body.scan(/href="(.+)">/).flatten.first)
+      elsif response.found? || response.moved_permanently?
+        Broach::RedirectionError.new(response.headers['location'].flatten.first)
       else
         Broach::APIError.new("Response from the server was unexpected (#{response.status_code})")
       end
