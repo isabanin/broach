@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('nap', '>= 0.3')
 
-  spec.files = (Dir["lib/**/*.rb"] | 'LICENSE')
+  spec.files = (Dir["lib/**/*.rb"] | ['LICENSE'])
 
   spec.has_rdoc = true
   spec.extra_rdoc_files = ['LICENSE']
