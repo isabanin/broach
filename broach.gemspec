@@ -1,8 +1,6 @@
-require 'rake'
-
 Gem::Specification.new do |spec|
   spec.name = 'broach'
-  spec.version = '0.1.5'
+  spec.version = '0.1.6'
   
   spec.author = "Manfred Stienstra"
   spec.email = "manfred@fngtps.com"
